@@ -1,0 +1,14 @@
+{
+  "appId": "io.ionic.visual",
+  "appName": "appVisual",
+  "bundledWebRuntime": false,
+  "linuxAndroidStudioPath": "/snap/bin/android-studio",
+  "npmClient": "npm",
+  "webDir": "www",
+  "plugins": {
+    "SplashScreen": {
+      "launchShowDuration": 0
+    }
+  },
+  "cordova": {}
+}

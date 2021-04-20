@@ -1,5 +1,7 @@
 {
   "name": "appVisual",
-  "integrations": {},
+  "integrations": {
+    "capacitor": {}
+  },
   "type": "angular"
 }
