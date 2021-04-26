@@ -8,25 +8,31 @@
     </ion-toolbar>
   </ion-header>
 
-  <div style="height: 60%; display: flex; align-items: center; justify-content: center;">
+  <div style="height: 80%; display: flex; align-items: center; justify-content: center;">
 
     <ion-card>
       <ion-card-header>
-        <ion-card-subtitle>Validar usuario</ion-card-subtitle>
+        <ion-card-subtitle>Relevamiento Visual</ion-card-subtitle>
         <ion-card-title>Ingrese sus datos</ion-card-title>
       </ion-card-header>
     
+      
       <ion-card-content>
+       
         <ion-item>
-          <ion-label>Usuario: </ion-label>
-          <ion-input type="text" [(ngModel)]="user"></ion-input>
+          <ion-label position="floating">Usuario</ion-label>
+          <ion-input type="email" [(ngModel)]="user" ></ion-input>
         </ion-item>
         <ion-item>
-          <ion-label>Contraseña: </ion-label>
+          <ion-label position="floating">Contraseña</ion-label>
           <ion-input type="password" [(ngModel)]="pass"></ion-input>
         </ion-item> 
+       
       </ion-card-content>
-      <ion-button color="primary" expand="block" (click)="login()" >Ingresar</ion-button>
+   
+
+      <ion-button color="tertiary" expand="block" (click)="login()">
+      <ion-icon name="exit-outline" slot="end"></ion-icon>Ingresar</ion-button>
     </ion-card>
 
   </div>

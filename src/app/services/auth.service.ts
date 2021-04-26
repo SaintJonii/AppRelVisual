@@ -17,14 +17,14 @@ export class AuthService {
    }
 
    loginUser(email: string, password: string) {
-    this.auth.signInWithEmailAndPassword(email, password)
+    return this.auth.signInWithEmailAndPassword(email, password)
       .then(async resp => {
 
-        await this.auth.currentUser.then(async token => {
-          this.router.navigateByUrl('home');
+        this.auth.currentUser.then(async token => {
+        this.router.navigateByUrl('home');
         });
       }).catch(function(e) {
-        alert("Usuario invalido");
+        return 1;
       });
   }
 }
