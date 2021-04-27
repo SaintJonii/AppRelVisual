@@ -19,7 +19,7 @@
 
       <ion-card-content>
         <form class="form" [formGroup]="loginForm" (ngSubmit)="submit()">
-          <ion-item >
+          <ion-item>
             <ion-label position="floating">Correo Electrónico</ion-label>
             <ion-input formControlName="correo" name="correo" type="text" [(ngModel)]="user"></ion-input>
           </ion-item>
@@ -44,8 +44,17 @@
       <ion-button [disabled]="!loginForm.valid" color="tertiary" expand="block" (click)="login()">
         <ion-icon name="exit-outline" slot="end"></ion-icon>Ingresar
       </ion-button>
+      <ion-button  color="secondary" expand="block" (click)="accesoRapido()" *ngIf="botonAcceso">
+        <ion-icon name="finger-print-outline" slot="end"></ion-icon>Acceso Rápido
+      </ion-button>
+      <ion-button  color="warning" expand="block" (click)="accesoRapido()" *ngIf="!botonAcceso">
+        <ion-icon name="close-outline" slot="end"></ion-icon>Cancelar 
+      </ion-button>
     </ion-card>
+  </div>
 
+  <div style="height: 10%; display: flex; align-items: center; justify-content: center;">
+    <app-select [disabled]="botonAcceso" (userSelected)="userSelected($event)"></app-select>
   </div>
 
 </ion-content>
