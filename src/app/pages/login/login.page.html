@@ -15,24 +15,35 @@
         <ion-card-subtitle>Relevamiento Visual</ion-card-subtitle>
         <ion-card-title>Ingrese sus datos</ion-card-title>
       </ion-card-header>
-    
-      
-      <ion-card-content>
-       
-        <ion-item>
-          <ion-label position="floating">Usuario</ion-label>
-          <ion-input type="email" [(ngModel)]="user" ></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-label position="floating">Contraseña</ion-label>
-          <ion-input type="password" [(ngModel)]="pass"></ion-input>
-        </ion-item> 
-       
-      </ion-card-content>
-   
 
-      <ion-button color="tertiary" expand="block" (click)="login()">
-      <ion-icon name="exit-outline" slot="end"></ion-icon>Ingresar</ion-button>
+
+      <ion-card-content>
+        <form class="form" [formGroup]="loginForm" (ngSubmit)="submit()">
+          <ion-item>
+            <ion-label position="floating">Usuario</ion-label>
+            <ion-input formControlName="correo" name="correo" type="text" [(ngModel)]="user"></ion-input>
+          </ion-item>
+          <div *ngFor="let error of errorMessages.correo">
+            <ng-container *ngIf="correo.hasError(error.type) && (correo.dirty || correo.touched)">
+              <small class="error-message">{{error.message}}</small>
+            </ng-container>
+          </div><br>
+          <ion-item>
+            <ion-label position="floating">Contraseña</ion-label>
+            <ion-input formControlName="clave" name="clave" type="password" [(ngModel)]="pass"></ion-input>
+          </ion-item>
+          <div *ngFor="let error of errorMessages.clave">
+            <ng-container *ngIf="clave.hasError(error.type) && (clave.dirty || clave.touched)">
+              <small class="error-message">{{error.message}}</small>
+            </ng-container>
+          </div><br>
+        </form>
+      </ion-card-content>
+
+
+      <ion-button [disabled]="!loginForm.valid" color="tertiary" expand="block" (click)="login()">
+        <ion-icon name="exit-outline" slot="end"></ion-icon>Ingresar
+      </ion-button>
     </ion-card>
 
   </div>
