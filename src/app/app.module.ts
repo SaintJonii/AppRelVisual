@@ -9,6 +9,14 @@ import { AppComponent } from './app.component';
 import { AngularFireModule } from '@angular/fire';
 import { environment } from '../environments/environment';
 import { ReactiveFormsModule} from '@angular/forms';
+import { AngularFireAuthModule} from '@angular/fire/auth';
+import { AngularFireDatabaseModule } from '@angular/fire/database';
+import { Camera } from '@ionic-native/camera/ngx';
+import { NativeAudio } from '@ionic-native/native-audio/ngx';
+import { File } from '@ionic-native/file/ngx';
+
+import firebase from 'firebase/app';
+firebase.initializeApp(environment.firebase);
 
 
 @NgModule({
@@ -19,9 +27,15 @@ import { ReactiveFormsModule} from '@angular/forms';
     IonicModule.forRoot(), 
     AppRoutingModule,  
     AngularFireModule.initializeApp(environment.firebase),
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    AngularFireDatabaseModule,
+    AngularFireAuthModule
     ],
-  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
+  providers: [
+    Camera,
+    File,
+    NativeAudio,
+    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

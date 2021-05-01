@@ -1,0 +1,34 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-back-button
+        style="font-family: Arial, Helvetica, sans-serif; font-size: 5;"
+        defaultHref="/"
+        text="Regresar"
+        color="primary"
+        mode="ios">
+      </ion-back-button>
+      </ion-buttons>
+      <ion-title  class="tituloHeader">
+        Fotos buenas
+         <ion-icon  class="ionIcon" src="./assets/sign-out-alt-solid.svg" (click)="salir()"></ion-icon>
+       </ion-title>
+    </ion-toolbar>
+  </ion-header> 
+
+<ion-content>
+  <ion-spinner name="lines" *ngIf="mostrar" class="unSpinner"></ion-spinner>
+
+  <div *ngFor="let imagen of imagenes">
+    <ion-img class="divImg" [src]="imagen.referencia"></ion-img>
+    <div class="imgLabel">Reportada por: {{imagen.usuario}} </div>
+    <div class="imgLabel">
+      "Me gusta:" {{imagen.likes}}
+      <ion-icon *ngIf="puedeDarleLike(imagen)" class="iconHeaderLargo" src="./assets/like-hand-sign.svg"
+        (click)="like(imagen)"></ion-icon>
+      <label *ngIf="puedeDarleLike(imagen) == false">
+        Te gusta!!
+      </label>
+    </div>
+  </div>
+</ion-content>

@@ -1,9 +1,28 @@
-<ion-header>
+<ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>Home Relevamiento</ion-title>
+    <ion-buttons  slot="start">
+      <ion-back-button style="font-family: Arial, Helvetica, sans-serif;"
+        defaultHref="/"
+        text="Regresar"
+        color="primary"
+        mode="ios">
+      </ion-back-button>
+    </ion-buttons>
+    <ion-title class="tituloHeader">
+      Elegir
+       <ion-icon class="ionIcon" src="./assets/sign-out-alt-solid.svg" (click)="salir()"></ion-icon>
+     </ion-title>
+
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-
+<ion-content class="home" [fullscreen]="true"><br>
+   
+  <div class="divOpcion">
+    <button class="btnOpcion2 buena" expand="block" (click)="clickBuenas()"></button>
+  </div>
+  <div class="divOpcion">
+    <button class="btnOpcion1 mala" expand="block" (click)="clickMalas()"></button>
+  </div>
+  
 </ion-content>

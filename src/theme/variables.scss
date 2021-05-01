@@ -1,5 +1,6 @@
 // Ionic Variables and Theming. For more info, please see:
 // http://ionicframework.com/docs/theming/
+@import url('https://fonts.googleapis.com/css?family=Gloria+Hallelujah');
 
 /** Ionic CSS Variables **/
 :root {
@@ -179,15 +180,12 @@
     --ion-color-step-900: #e6e6e6;
     --ion-color-step-950: #f2f2f2;
 
+    --ion-toolbar-background: #0d0d0d;
+
     --ion-item-background: #000000;
 
-    --ion-card-background: #1c1c1d;
-  }
+    // --ion-card-background: url('../assets/fondo_card.jpg');
 
-  .ios ion-modal {
-    --ion-background-color: var(--ion-color-step-100);
-    --ion-toolbar-background: var(--ion-color-step-150);
-    --ion-toolbar-border-color: var(--ion-color-step-250);
   }
 
 
@@ -231,6 +229,336 @@
 
     --ion-tab-bar-background: #1f1f1f;
 
-    --ion-card-background: #1e1e1e;
+    // --ion-card-background: url('../assets/fondo_card.jpg');
+  }
+}
+
+ion-toolbar{
+  --background:none;
+  text-align: center;
+  background-color: #000000;
+  color:#d1cfcf;
+}
+
+// .unSpinner{
+//   width: 100%;
+//   height: 100%;
+//   color:  #21e6ab; 
+//   // stroke: #444;
+//   // fill: #222;
+//   // background-color: rgba(131, 130, 133,.3) 
+// }
+
+
+.btnOpcion1 {
+  background: url('../assets/edificio_roto.png') no-repeat center / cover;
+  height: 80%;
+  width: 80%;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  display: block;
+  font-size: 20px;
+  font-family: 'Exo', sans-serif;
+  color:black;
+  letter-spacing: 2px;
+  // padding: 50px 90px;
+  margin: 0 auto;
+  box-shadow: 0 10px grey;
+  border-radius: 20px;
+}
+.btnOpcion2 {
+  background: url('../assets/edificio.png') no-repeat center / cover;
+  height: 80%;
+  width: 80%;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  display: block;
+  font-size: 20px;
+  font-family: 'Exo', sans-serif;
+  color:black;
+  letter-spacing: 2px;
+  // padding: 50px 90px;
+  margin: 0 auto;
+  box-shadow: 0 10px grey;
+  border-radius: 20px;
+}
+
+
+.btnFoto {
+  height: 120px;
+  width: 80%;
+  outline: none;
+  margin-left: 10%;
+  border: none;
+  cursor: pointer;
+  display: block;
+  font-size: 20px;
+  font-family: 'Exo', sans-serif;
+  color:black;
+  letter-spacing: 2px;
+  // padding: 50px 90px;
+  margin: 2 auto;
+  border-radius: 20px;
+
+}
+
+
+.divOpcion{
+  height: 50%;
+  padding: 2% 0% 0% 0%;
+}
+
+
+.home {
+  --background:none;
+  background:url('../assets/fondo.jpg');
+   background-size: cover;
+  background-position: bottom;
+  font-family: 'Gloria Hallelujah', cursive;
+}
+
+ion-content.login {
+  background:url('../assets/casa.png') no-repeat bottom / cover;
+  background-size: 80%;
+}
+
+
+ion-content {
+  --background:none;
+  background-image:url('../assets/fondo.jpg');
+   background-size: block;
+  background-position: bottom;
+  font-family: 'Gloria Hallelujah', cursive;
+
+}
+.ionIcon{
+  margin: 2% 0% 0% 20%;
+}
+
+.ionIconMenu{
+  margin: 2% 0% 0% 20%;
+}
+
+.ionIconIzquierda{
+  margin: 2% 30% 0% 0%;
+}
+
+.ios {
+  --ion-font-family: 'Gloria Hallelujah'; /* It's also good to add a fallback font here */
+}
+
+// .list-md {
+//   background: url('../assets/fondo_card.jpg') !important;
+// } 
+
+
+.btnPrincipal{
+  
+  height: 15%;
+  width: 90%;
+  margin: 5% 5% 0% 5%;
+ // box-shadow: 0 15px rgb(60, 47, 126);
+  border-radius: 10px;
+  border: 2px solid;
+  font-size: 150%;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  letter-spacing: 2px;
+  position: relative;
+ 
+}
+
+.registro {
+  color: red;
+  font-weight: bold;
+}
+
+.btnMenu{
+
+  height: 40%;
+  width: 90%;
+  margin: 5% 5% 5% 5%;
+ // box-shadow: 0 15px rgb(60, 47, 126);
+  border-radius: 5px;
+  border: 2.5px solid;
+  font-size: 150%;
+  font-family: 'Bangers', cursive;
+  letter-spacing: 2px;
+  position: relative;
+ 
+}
+
+.ion-router-link {
+  color: red;
+  font-weight: bold;
+}
+
+.cabeceraMensaje{
+  font-size: 80%;
+  pad: 0%;
+  color: #D2D1D7;
+}
+
+
+
+.btnIngreso{
+
+  height: 10%;
+  width: 90%;
+  margin: 5% 5% 5% 5%;
+ // box-shadow: 0 15px rgb(60, 47, 126);
+  border-radius: 5px;
+  border: 2.5px solid;
+  font-size: 150%;
+  font-family: 'Bangers', cursive;
+  letter-spacing: 2px;
+  position: relative;
+ 
+}
+
+
+.colorAdmin{
+  background: red;
+  color: #ffffff;
+  border-color: #D2D1D7;
+ }
+
+ .colorInvitado{
+  background: seagreen;
+  color: #ffffff;
+  border-color: #D2D1D7;
+ }
+
+ .colorUsuario{
+  background: steelblue;
+  color: #ffffff;
+  border-color: #D2D1D7;
+ }
+
+ .colorAnonimo{
+  background: black;
+  color: #ffffff;
+  border-color: #D2D1D7;
+ }
+
+ .colorTester{
+  background: #c4c4c4;
+  color: #ffffff;
+  border-color: #D2D1D7;
+ }
+
+.colorSecundario{
+ background:#002540;
+ color: #ffffff;
+ border-color: #D2D1D7;
+}
+
+.colorTerciario{
+ background: #0070f7;  
+ color: #000000;
+ border-color:#D2D1D7; 
+}
+
+// propios a la derecha
+.mensaje{
+  font-size: 120%;
+  color: #ffffff;   
+}
+
+.mensajePropio{
+  background:#02406d;  
+  margin: 2% 2% 2% 10%;
+ }
+
+.mensajeGrupo{
+  background:#002540;  
+  margin: 2% 10% 2% 2%;
+ }
+ 
+ .enviarTexto{
+  color:white;
+}
+
+.unSpinner{
+  z-index: 100000;
+  position: fixed;
+  vertical-align: middle;
+  width: 50%;
+  margin-left: 25%;
+  margin-top: 25%;
+  height: 50%;
+  color: #F60100;
+}
+
+.iconHeaderLargo{
+  margin: 2% 0% 0% 10%;
+  
+  // padding: 25% 0% 0% 0%;
+}
+
+.divInputError{
+  font-size: 1.0em !important;
+  font-family: 'Bangers', cursive;
+  color:red;
+}
+
+
+.errorLogueo{
+  font-size: 35px;
+  color:rgba(0, 0, 255, 0.931);
+  font-family: 'Exo', sans-serif;
+  text-align: center;
+  text-emphasis: bold;  
+  border-radius: 10%;
+  background:white; 
+  height: 30%;
+  padding: 5%;
+}
+
+
+.tituloHeader{
+  text-align: center;
+ 
+}
+
+.ionIcon{
+  margin: 2% 0% 0% 30%;
+}
+
+.headerLargo{
+  margin: 0% 0% 0% 5%;
+}
+
+.iconHeaderLargo{
+  margin: 2% 0% 0% 10%;
+  
+  // padding: 25% 0% 0% 0%;
+}
+
+
+@media (orientation:landscape){
+
+  .btnIngreso{
+
+    height: 12%; 
+    margin: 1% 5% 1% 5%;
+    font-size: 110%;
+  }
+
+  .btnPrincipal{
+  
+    height: 13%;
+    width: 90%;
+    margin: 1% 5% 0% 5%;   
+    font-size: 110%;   
+   
+  }
+
+  .btnMenu{
+    height: 30%;
+    width: 90%;
+    margin: 2% 5% 2% 5%;
+   
   }
 }
