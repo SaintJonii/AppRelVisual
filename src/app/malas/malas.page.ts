@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Camera, CameraOptions } from '@ionic-native/camera/ngx';
+import { Plugins, CameraResultType, CameraSource } from '@capacitor/core';
+const { Camera } = Plugins;
 
 import * as firebase from 'firebase';
 import { Router } from '@angular/router'
@@ -15,7 +16,7 @@ export class MalasPage implements OnInit {
   mostrar:boolean = true;
 
   
-  constructor(private camera: Camera, private router: Router) { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
 
@@ -25,30 +26,23 @@ export class MalasPage implements OnInit {
 
   async sacarFoto() {
 
-    const options: CameraOptions = {
+    let capturedPhoto = await Camera.getPhoto({
       quality: 100,
-      targetHeight: 600,
-      targetWidth: 600,
-      destinationType: this.camera.DestinationType.DATA_URL,
-      encodingType: this.camera.EncodingType.JPEG,
-      mediaType: this.camera.MediaType.PICTURE,
-      correctOrientation:true
-    }
+      resultType: CameraResultType.DataUrl,
+      source: CameraSource.Camera,
+      webUseInput: true,
+    });
 
-    try {
-
-      let hora = Date.now();
-      let ubicacion = "malas/" + this.usuarioActual + "/" + hora;     
-      const result = await this.camera.getPicture(options);
-      const image = `data:image/jpeg;base64,${result}`;
-      const picture = firebase.default.storage().ref(ubicacion);
-      picture.putString(image, 'data_url').then(()=>{
-        this.guardarReferencia(ubicacion);
-      });
-    }
-    catch (e) {
-      console.log(e.error);
-    }
+    let dataUrl = capturedPhoto.dataUrl;
+    let hora = new Date().getTime();
+    let ubicacion = "malas/" + this.usuarioActual + "/" + hora;
+    let ref = firebase.default.storage().ref(ubicacion);
+    
+    ref.putString(dataUrl, 'data_url',{
+      contentType: 'image/jpeg',
+    }).then(()=>{
+      this.guardarReferencia(ubicacion);
+    })
 
   }
 

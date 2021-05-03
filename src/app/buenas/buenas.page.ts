@@ -46,7 +46,6 @@ export class BuenasPage implements OnInit {
     }).then(()=>{
       this.guardarReferencia(ubicacion);
     })
-  
     
   }
 
