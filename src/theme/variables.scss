@@ -264,7 +264,7 @@ ion-toolbar{
   letter-spacing: 2px;
   // padding: 50px 90px;
   margin: 0 auto;
-  box-shadow: 0 10px grey;
+  opacity: 0.85;
   border-radius: 20px;
 }
 .btnOpcion2 {
@@ -280,8 +280,8 @@ ion-toolbar{
   color:black;
   letter-spacing: 2px;
   // padding: 50px 90px;
+  opacity: 0.85;
   margin: 0 auto;
-  box-shadow: 0 10px grey;
   border-radius: 20px;
 }
 
@@ -313,7 +313,7 @@ ion-toolbar{
 
 .home {
   --background:none;
-  background:url('../assets/fondo.jpg');
+  background:url('../assets/home.png');
    background-size: cover;
   background-position: bottom;
   font-family: 'Gloria Hallelujah', cursive;
@@ -327,7 +327,7 @@ ion-content.login {
 
 ion-content {
   --background:none;
-  background-image:url('../assets/fondo.jpg');
+  background-image:url('../assets/home.png');
    background-size: block;
   background-position: bottom;
   font-family: 'Gloria Hallelujah', cursive;
