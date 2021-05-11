@@ -313,8 +313,8 @@ ion-toolbar{
 
 .home {
   --background:none;
-  background:url('../assets/home.png');
-   background-size: cover;
+  background:url('../assets/home2.png');
+  background-size: cover;
   background-position: bottom;
   font-family: 'Gloria Hallelujah', cursive;
 }
@@ -327,11 +327,10 @@ ion-content.login {
 
 ion-content {
   --background:none;
-  background-image:url('../assets/home.png');
+  background-image:url('../assets/home2.png');
    background-size: block;
   background-position: bottom;
   font-family: 'Gloria Hallelujah', cursive;
-
 }
 .ionIcon{
   margin: 2% 0% 0% 20%;

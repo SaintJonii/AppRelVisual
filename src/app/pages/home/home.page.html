@@ -1,28 +1,25 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-buttons  slot="start">
-      <ion-back-button style="font-family: Arial, Helvetica, sans-serif;"
-        defaultHref="/"
-        text="Regresar"
-        color="primary"
+    <ion-buttons slot="start">
+      <ion-back-button style="font-family: Arial, Helvetica, sans-serif;" defaultHref="/" text="Volver" color="primary"
         mode="ios">
       </ion-back-button>
     </ion-buttons>
-    <ion-title class="tituloHeader">
+    <ion-title class="tituloHeader" style="margin-left: 40%;">
       Elegir
-       <ion-icon class="ionIcon" src="./assets/sign-out-alt-solid.svg" (click)="salir()"></ion-icon>
-     </ion-title>
+    </ion-title>
+    <ion-icon class="ionIcon" slot="end"  src="./assets/sign-out-alt-solid.svg" style="margin-right: 5%;" (click)="salir()"></ion-icon>
 
   </ion-toolbar>
 </ion-header>
 
 <ion-content class="home" [fullscreen]="true"><br>
-   
+
   <div class="divOpcion">
     <button class="btnOpcion2 buena" expand="block" (click)="clickBuenas()"></button>
   </div>
   <div class="divOpcion">
     <button class="btnOpcion1 mala" expand="block" (click)="clickMalas()"></button>
   </div>
-  
+
 </ion-content>
